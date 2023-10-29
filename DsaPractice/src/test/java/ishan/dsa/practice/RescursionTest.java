@@ -3,6 +3,8 @@ package ishan.dsa.practice;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Set;
+
 public class RescursionTest {
 
     @Test
@@ -59,7 +61,9 @@ public class RescursionTest {
     @Test
     public void testSubString(){
         String s = "ABC";
-        Assertions.assertNotNull(RecursionUtils.subString(s));
+        Set<String> strings = RecursionUtils.subString(s);
+        System.out.println(strings);
+        Assertions.assertNotNull(strings);
     }
 
 }
