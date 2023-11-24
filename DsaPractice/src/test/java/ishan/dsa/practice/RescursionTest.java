@@ -3,6 +3,7 @@ package ishan.dsa.practice;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class RescursionTest {
@@ -64,6 +65,14 @@ public class RescursionTest {
         Set<String> strings = RecursionUtils.subString(s);
         System.out.println(strings);
         Assertions.assertNotNull(strings);
+    }
+
+    @Test
+    public void possibeWordsTest(){
+        int [] a = new int[]{2,3,4};
+        ArrayList<String> result = RecursionUtils.possibleWords(a, a.length);
+        Assertions.assertTrue(result.size() == 27);
+        Assertions.assertTrue(result.contains("adf"));
     }
 
 }

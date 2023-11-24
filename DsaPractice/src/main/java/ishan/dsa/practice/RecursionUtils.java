@@ -1,12 +1,22 @@
 package ishan.dsa.practice;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class RecursionUtils {
+
+    private static Map<Integer, String> digToWord = new HashMap<>();
+
+    static{
+        digToWord.put(2,"abc");
+        digToWord.put(3,"def");
+        digToWord.put(4,"ghi");
+        digToWord.put(5,"jkl");
+        digToWord.put(6,"mno");
+        digToWord.put(7,"pqrs");
+        digToWord.put(8,"tuv");
+        digToWord.put(9,"wxyz");
+    }
 
     public static boolean isPalindrome(String s){
         if(s.length() <= 1){
@@ -65,5 +75,26 @@ public class RecursionUtils {
         }
         getSubString(s, i+1, curr + s.charAt(i), sb);
         getSubString(s, i+1, curr, sb);
+    }
+
+    //Function to find list of all words possible by pressing given numbers.
+    static ArrayList <String> possibleWords(int a[], int N)
+    {
+        // your code here
+        ArrayList<String> result = new ArrayList<>();
+        return getAllCombination(0,a,N,result, new StringBuffer());
+    }
+
+    static ArrayList<String> getAllCombination(int i, int a[], int n, ArrayList<String> result, StringBuffer sb){
+        if(i == n){
+            result.add(sb.toString());
+            return result;
+        }
+        for(int j=0; j < digToWord.get(a[i]).length(); j++){
+            sb.append(digToWord.get(a[i]).charAt(j));
+            getAllCombination(i+1, a, n, result, sb);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        return result;
     }
 }
