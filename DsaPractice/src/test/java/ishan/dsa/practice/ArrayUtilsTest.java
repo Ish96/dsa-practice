@@ -20,4 +20,12 @@ public class ArrayUtilsTest {
         int secondLargest = ArrayUtils.findSecondLargest(arr);
         Assertions.assertEquals(arr[secondLargest], 12);
     }
+
+    @Test
+    public void  testCheckArrayIsSortedInNonDecrease(){
+        int [] arr = new int[]{5,8,12,20};
+        Assertions.assertTrue(ArrayUtils.checkArrayIsSortedInNonDecrease(arr));
+        arr = new int[]{2,5,12,3};
+        Assertions.assertFalse(ArrayUtils.checkArrayIsSortedInNonDecrease(arr));
+    }
 }
