@@ -51,4 +51,25 @@ public class ArrayUtils {
         }
         return true;
     }
+
+    public static void reverseArray(int [] arr){
+        int n = arr.length;
+        for(int i = 0; i<n/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[n-i-1];
+            arr[n-i-1] = temp;
+        }
+    }
+
+    public static void reverseArrayV2(int [] arr){
+        int low = 0;
+        int high = arr.length - 1;
+        while(low < high){
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+    }
 }
