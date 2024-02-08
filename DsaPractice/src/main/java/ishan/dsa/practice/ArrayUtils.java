@@ -119,4 +119,17 @@ public class ArrayUtils {
         }
         return res;
     }
+
+    public static void moveZeroToEnd(int [] arr){
+        int res = 0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]!=0){
+                if(i != res){
+                    arr[res]= arr[i];
+                    arr[i] = 0;
+                }
+                res++;
+            }
+        }
+    }
 }

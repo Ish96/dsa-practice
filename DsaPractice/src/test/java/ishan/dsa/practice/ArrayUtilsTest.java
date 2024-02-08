@@ -87,4 +87,16 @@ public class ArrayUtilsTest {
         n = ArrayUtils.removeDuplicatesFromSortedArrayV3(arr);
         Assertions.assertEquals(1,n);
     }
+
+    @Test
+    public void testMoveZeroToEnd(){
+        int [] arr = new int[]{8,5,0,0,10,0,20};
+        ArrayUtils.moveZeroToEnd(arr);
+        int [] exp = new int[]{8,5,10,20,0,0,0};
+        Assertions.assertArrayEquals(exp,arr);
+        arr = new int[]{0,0,0,10,0,0};
+        ArrayUtils.moveZeroToEnd(arr);
+        exp = new int[]{10,0,0,0,0,0};
+        Assertions.assertArrayEquals(exp,arr);
+    }
 }
