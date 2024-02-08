@@ -72,4 +72,51 @@ public class ArrayUtils {
             high--;
         }
     }
+
+    //Time: Big O n square, Space: constant
+    public static int removeDuplicatesFromSortedArray(int[] arr) {
+        int distinctArraySize = 1;
+        for(int i =0; i<arr.length; i++){
+            for(int j = i+1; j<arr.length -1; j++){
+                if(arr[i] != arr[j]){
+                    if(j != i+1){
+                        arr[i+1]= arr[j];
+                    }
+                    distinctArraySize ++;
+                    break;
+                }
+                if(arr[i]==arr[j]){
+                    j++;
+                }
+            }
+        }
+        return distinctArraySize;
+    }
+
+    //Time: Big O n, Space: Big O n
+    public static int removeDuplicatesFromSortedArrayV2(int[] arr) {
+        int [] temp = new int[arr.length];
+        int res = 1;
+        temp[0] = arr[0];
+        for(int i = 1; i<arr.length; i++){
+            if(temp[res-1] != arr[i]){
+                temp[res] = arr[i];
+                res++;
+            }
+        }
+        System.arraycopy(temp, 0, arr, 0, temp.length);
+        return res;
+    }
+
+    //Time: Big O n, Space: constant
+    public static int removeDuplicatesFromSortedArrayV3(int[] arr) {
+        int res = 1;
+        for(int i = 1; i<arr.length; i++) {
+            if (arr[res - 1] != arr[i]) {
+                arr[res] = arr[i];
+                res++;
+            }
+        }
+        return res;
+    }
 }

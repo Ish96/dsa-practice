@@ -54,4 +54,37 @@ public class ArrayUtilsTest {
         Assertions.assertEquals(5, arr[1]);
         Assertions.assertEquals(6, arr[2]);
     }
+
+    @Test
+    public void testRemoveDuplicatedFromSortedArray(){
+        int [] arr =  new int[]{10,20,20,30,30,30};
+        int n = ArrayUtils.removeDuplicatesFromSortedArray(arr);
+        Assertions.assertEquals(3,n);
+        Assertions.assertEquals(30, arr[2]);
+        arr = new int[]{10,10,10};
+        n = ArrayUtils.removeDuplicatesFromSortedArray(arr);
+        Assertions.assertEquals(1,n);
+    }
+
+    @Test
+    public void testRemoveDuplicatedFromSortedArrayV2(){
+        int [] arr =  new int[]{10,20,20,30,30,30};
+        int n = ArrayUtils.removeDuplicatesFromSortedArrayV2(arr);
+        Assertions.assertEquals(3,n);
+        Assertions.assertEquals(30, arr[2]);
+        arr = new int[]{10,10,10};
+        n = ArrayUtils.removeDuplicatesFromSortedArrayV2(arr);
+        Assertions.assertEquals(1,n);
+    }
+
+    @Test
+    public void testRemoveDuplicatedFromSortedArrayV3(){
+        int [] arr =  new int[]{10,20,20,30,30,30};
+        int n = ArrayUtils.removeDuplicatesFromSortedArrayV3(arr);
+        Assertions.assertEquals(3,n);
+        Assertions.assertEquals(30, arr[2]);
+        arr = new int[]{10,10,10};
+        n = ArrayUtils.removeDuplicatesFromSortedArrayV3(arr);
+        Assertions.assertEquals(1,n);
+    }
 }
