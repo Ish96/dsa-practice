@@ -99,4 +99,12 @@ public class ArrayUtilsTest {
         exp = new int[]{10,0,0,0,0,0};
         Assertions.assertArrayEquals(exp,arr);
     }
+
+    @Test
+    public void testLeftRotateArrayByOne(){
+        int [] arr = new int[]{1,2,3,4,5};
+        ArrayUtils.leftRotateArrayByOne(arr);
+        int [] exp = new int[]{2,3,4,5,1};
+        Assertions.assertArrayEquals(exp, arr);
+    }
 }
