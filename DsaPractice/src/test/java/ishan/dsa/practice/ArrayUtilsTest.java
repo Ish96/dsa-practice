@@ -107,4 +107,29 @@ public class ArrayUtilsTest {
         int [] exp = new int[]{2,3,4,5,1};
         Assertions.assertArrayEquals(exp, arr);
     }
+
+    @Test
+    public void testLeftRotateArrayByNumber(){
+        int [] arr = new int[]{1,2,3,4,5};
+        ArrayUtils.leftArrayRotateByNumber(arr, 3);
+        int [] exp = new int[]{4,5,1,2,3};
+        Assertions.assertArrayEquals(exp, arr);
+    }
+
+    @Test
+    public void testLeftRotateArrayByNumberV2(){
+        int [] arr = new int[]{1,2,3,4,5};
+        ArrayUtils.leftArrayRotateByNumberV2(arr, 3);
+        int [] exp = new int[]{4,5,1,2,3};
+        Assertions.assertArrayEquals(exp, arr);
+    }
+
+    @Test
+    public void testMaxWater(){
+        int [] arr = new int[]{16, 11, 16, 62, 2, 97, 61, 1, 66, 32, 58, 48, 17, 5, 93, 3, 83, 91, 84, 14, 5, 52, 58, 26, 37, 36, 81, 55, 55, 40, 65, 24, 97, 98, 75, 88, 97, 29, 45, 36, 77, 40, 26, 13, 84, 90, 89, 91, 43, 41, 51, 66, 86, 63, 96, 92, 8, 60, 77, 99, 60, 90, 59, 48, 30, 49};
+        int maxWater = ArrayUtils.maxWater(arr, arr.length);
+        arr = new int[]{2,1,3,4,5,6};
+        maxWater = ArrayUtils.maxWater(arr, arr.length);
+        Assertions.assertTrue(maxWater==8);
+    }
 }

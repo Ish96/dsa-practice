@@ -141,4 +141,39 @@ public class ArrayUtils {
         }
         arr[n-1]=temp;
     }
+
+    public static void leftArrayRotateByNumber(int [] arr, int n){
+        for(int i = 0; i<n; i++){
+            leftRotateArrayByOne(arr);
+        }
+    }
+
+    public static void leftArrayRotateByNumberV2(int [] arr, int n){
+        int [] temp = new int[n];
+        for(int i=0; i<n; i++){
+            temp[i] = arr[i];
+        }
+        for(int i = n; i<arr.length; i++){
+            arr[i-n] = arr[i];
+        }
+        for(int i = 0; i<n; i++){
+            arr[arr.length - n + i] = temp[i];
+        }
+    }
+
+    public static int maxWater(int height[], int n)
+        {
+            //Your code here
+            int max=0;
+            for(int i=0; i<height.length-1; i++){
+                for(int j=i+1; j<height.length;j++){
+                    int temp = Math.min(height[i], height[j]) * (j-i-1);
+                    if(max < temp){
+                        max = temp;
+                    }
+                }
+            }
+            return max;
+        }
+
 }
