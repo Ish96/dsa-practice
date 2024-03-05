@@ -107,4 +107,20 @@ public class ArrayUtilsTest {
         int [] exp = new int[]{2,3,4,5,1};
         Assertions.assertArrayEquals(exp, arr);
     }
+
+    @Test
+    public void testLeftRotateArrayByNumber(){
+        int [] arr = new int[]{1,2,3,4,5};
+        ArrayUtils.leftArrayRotateByNumber(arr, 3);
+        int [] exp = new int[]{4,5,1,2,3};
+        Assertions.assertArrayEquals(exp, arr);
+    }
+
+    @Test
+    public void testLeftRotateArrayByNumberV2(){
+        int [] arr = new int[]{1,2,3,4,5};
+        ArrayUtils.leftArrayRotateByNumberV2(arr, 3);
+        int [] exp = new int[]{4,5,1,2,3};
+        Assertions.assertArrayEquals(exp, arr);
+    }
 }
